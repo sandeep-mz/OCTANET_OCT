@@ -1,0 +1,200 @@
+/* Common styles (for all screen sizes) */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+   
+    overflow-x: hidden;
+}
+
+  section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #e49b3a, rgb(154, 222, 145));
+    overflow: hidden;
+  }
+  section .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+  }
+  section .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  section .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+  section .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
+  section .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+  @keyframes wave{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: 1000px; 
+    }
+  }
+  @keyframes wave2{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: -1000px; 
+    }
+  }
+  
+
+.to-do {
+    background-color: rgb(26, 58, 103);
+    max-width: 607px;
+    margin: 100px auto 20px;
+    padding: 23px 30px 70px;
+    border-radius: 17px;
+    position: relative;
+}
+
+.to-do img {
+    width: 24px;
+}
+
+.to-do h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #e5e8eb;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background: #e5e8eb;
+    align-items: center;
+    border-radius: 17px;
+    padding-left: 30px;
+    padding-right: 10px;
+    margin-bottom: 25px;
+}
+
+.row input {
+    width: 59%;
+    flex: 1;
+    height: 5vh;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.row button {
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background: #ed2727;
+    border-radius: 17px;
+    width: 116px;
+    height: 47px;
+    margin-right: -9px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 20px;
+    padding: 12px 8px 13px 30px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(26, 72, 109);
+    color: #e5e8eb;
+    border-radius: 13px;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    background-image: url(./Assests/unchecked.png);
+}
+
+ul li.checked {
+    color: #787777;
+    padding-left: 30px;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url("./Assests/checked.png");
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #f3f3f3;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li span:hover {
+    background: #ed2727;
+    border-radius: 100%;
+    color: #153677;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .to-do {
+        max-width: 90%;
+        margin: 50px auto 20px;
+    }
+    
+    .row {
+        padding-left: 10px;
+    }
+    
+    ul li {
+        font-size: 12px;
+        padding: 10px 8px 11px 30px;
+    }
+    .row button {
+        font-size: 14px;
+        border: none;
+        outline: none;
+        background: #ed2727;
+        border-radius: 17px;
+        width: 50px;
+        height: 47px;
+        margin-right: -9px;
+    }
+}
